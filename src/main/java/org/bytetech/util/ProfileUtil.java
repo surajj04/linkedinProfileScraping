@@ -18,6 +18,7 @@ public class ProfileUtil {
         Profile profile = new Profile();
 
         try {
+            Thread.sleep(2000);
             driver.navigate().to(url);
             Thread.sleep(2000);
             profile.setName(driver.findElement(By.xpath("//section[1]/div[2]/div[2]/div[1]/div[1]/span/a/h1")).getText());
@@ -50,11 +51,9 @@ public class ProfileUtil {
 
             if (!webEle.isEmpty()) {
                 for (WebElement ele : webEle) {
-                    System.out.println(ele.getText());
                     list.add(ele.getText());
                 }
             }
-            System.out.println(webEle.isEmpty());
             driver.navigate().back();
         } catch (ElementNotFound elementNotFound) {
             List<WebElement> webEle = driver.findElements(By.xpath("//main/section[5]/div[4]/ul/li"));
@@ -65,7 +64,6 @@ public class ProfileUtil {
                 }
             }
         }
-        System.out.println(list);
         return list;
     }
 
@@ -87,8 +85,8 @@ public class ProfileUtil {
             driver.findElement(By.xpath("//main/section[10]/div[3]/div/div/div/a")).click();
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            List<WebElement> skillEle = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//main/section/div[2]/div[2]/div/div/div[1]/ul/li/div/div/div[2]/div[1]/a/div/div/div/div/span[1]")));
 
+            List<WebElement> skillEle = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//main/section/div[2]/div[2]/div/div/div[1]/ul/li/div/div/div[2]/div[1]/a/div/div/div/div/span[1]")));
             if (!skillEle.isEmpty()) {
                 for (WebElement ele : skillEle) {
                     list.add(ele.getText());
@@ -96,9 +94,8 @@ public class ProfileUtil {
             }
             driver.navigate().back();
         } catch (ElementNotFound elementNotFound) {
-            System.out.println("Skills Button not found!!!");
+            System.out.println("Element Not Found!!!");
         }
-        System.out.println(list);
         return list;
     }
 
@@ -122,7 +119,6 @@ public class ProfileUtil {
                 list.add(ele.getText());
             }
         }
-        System.out.println(list);
         return list;
     }
 
