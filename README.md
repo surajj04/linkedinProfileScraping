@@ -42,5 +42,4 @@ This LinkedIn Scraping Tool, built with **Java** and **Selenium**, automates the
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/linkedin-scraping-tool.git
-   cd linkedin-scraping-tool
+   [git clone https://github.com/your-username/linkedin-scraping-tool.git](https://github.com/surajj04/linkedinProfileScraping)
