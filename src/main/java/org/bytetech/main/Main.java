@@ -4,11 +4,7 @@ import org.bytetech.config.Config;
 import org.bytetech.model.Profile;
 import org.bytetech.util.Login;
 import org.bytetech.util.ProfileUtil;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,24 +12,33 @@ public class Main {
         Config config = new Config();
         WebDriver driver = config.getDriver();
 
-        Login.login(("nagog90902@bawsny.com"), "nagog@1234 ", driver);
+        Login.login(("yekeco9355@eoilup.com"), "yekeco@1234", driver);
+        Profile profile = ProfileUtil.getProfile("https://www.linkedin.com/in/kunal-kushwaha/", driver);
 
-        ProfileUtil.getProfile("https://www.linkedin.com/in/kunal-kushwaha/", driver);
+        driver.close();
 
-//        driver.navigate().to("https://www.saucedemo.com/v1/");
+//        System.out.println(profile);
+
+
+//        driver.navigate().to("https://github.com/surajj04");
+
+
+//        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/form/input[1]")).sendKeys("standard_user");
+//        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/form/input[2]")).sendKeys("secret_sauce");
+//        driver.findElement(By.xpath("/html/body/div[1]/div[4]/main/div[1]/div/div/div[2]/div/nav/a[2]")).click();
 //
-//        driver.findElement(By.xpath("//div[2]/div[1]/div/div/form/input[1]")).sendKeys("standard_user");
-//        driver.findElement(By.xpath("//div[2]/div[1]/div/div/form/input[2]")).sendKeys("secret_sauce");
-//        driver.findElement(By.xpath("//div[2]/div[1]/div/div/form/input[3]")).click();
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //
-//        List<WebElement> eles = driver.findElements(By.xpath("//div/div[2]/div[2]/div/div[2]/div/div"));
+//        List<WebElement> elements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy((By.xpath("//main/div[2]/div/div[2]/turbo-frame/div/div[2]/ul/li"))));
 //
-//        System.out.println(eles.size());
-//
-//        for (WebElement ele : eles) {
+//        for (WebElement ele : elements) {
 //            System.out.println(ele.getText());
+//            System.out.println();
 //        }
-
-
+//
+//        System.out.println(elements.size());
+//        System.out.println(elements.isEmpty());
+//
+//        driver.close();
     }
 }
